@@ -12,3 +12,7 @@ export const registerUser = (userdata) => {
 export const addTask = (taskdata) => {
     return Taskmodel.create(taskdata);
 }
+
+export const getTasks = (userid) => {
+    return Taskmodel.find({user:userid});
+}
