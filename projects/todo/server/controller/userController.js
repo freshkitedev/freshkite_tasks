@@ -12,7 +12,7 @@ export const regUserController = async (req, res) => {
 export const loginController = async (req, res) => {
     try {
         const retVal = await loginService(req.body.username, req.body.password);
-        res.status(200).json(retVal);
+        res.status(200).json(retVal.token);
     } catch(err) {
         res.status(400).json({error:err.message});
     }

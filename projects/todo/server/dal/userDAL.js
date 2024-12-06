@@ -3,4 +3,4 @@ import { appConfig } from "../config/config.js";
 
 const selectedDAL = appConfig.db == "mongo"?mongoDAL:null;
 
-export const {findUserByName, registerUser} = selectedDAL;
+export const {findUserByName, registerUser, addTask} = selectedDAL;
