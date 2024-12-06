@@ -1,4 +1,4 @@
-import { addTaskService, getTaskService } from "../services/taskService.js";
+import { addTaskService, getTaskService, updateTaskService } from "../services/taskService.js";
 
 export const addTaskController = async (req, res) => {
     try {
@@ -19,6 +19,22 @@ export const addTaskController = async (req, res) => {
 export const getTaskController = async (req, res) => {
     try {
         const ret = await getTaskService(req.user.id);
+        res.status(200).json(ret);
+    } catch(err) {
+        console.log(err);
+        res.status(400).json({error:err.message})
+    }
+}
+
+export const updateTaskController = async (req, res) => {
+    try {
+        const taskdata = {
+            user: req.user.id,
+            todo: req.body.todo,
+            status: req.body.status,
+        }
+        console.log(taskdata);
+        const ret = await updateTaskService(req.params.id, taskdata);
         res.status(200).json(ret);
     } catch(err) {
         console.log(err);
