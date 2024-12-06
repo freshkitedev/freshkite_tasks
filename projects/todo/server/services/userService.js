@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 import { appConfig } from "../config/config.js";
-import { findUserByName, registerUser } from "../DAL/userDAL.js";
+import { findUserByName, registerUser } from "../dal/dal.js";
 
 export const registerService = async (username, password) => {
     let user = await findUserByName(username);
