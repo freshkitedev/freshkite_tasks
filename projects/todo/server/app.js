@@ -1,8 +1,12 @@
 import exp from "express"
 import { appConfig } from "./config/config.js"
 import { connecToMongoDb } from "./db/mongoDB.js"
+import userRouter from "./routes/userRoutes.js"
 
 const app = exp()
+/* Middlewares */
+app.use(exp.json())
+app.use('/auth', userRouter)
 
 const connectToDb = async () => {
     try {
