@@ -13,6 +13,10 @@ export const addTask = (taskdata) => {
     return Taskmodel.create(taskdata);
 }
 
+export const findById = (id) => {
+    return Taskmodel.findById(id);
+}
+
 export const getTasks = (userid) => {
     return Taskmodel.find({user:userid});
 }
