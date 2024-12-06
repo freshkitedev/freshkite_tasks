@@ -24,3 +24,7 @@ export const getTasks = (userid) => {
 export const updateTask = (id, taskdata) => {
     return Taskmodel.findByIdAndUpdate(id, taskdata, {new:true});
 }
+
+export const deleteTask = (id) => {
+    return Taskmodel.findByIdAndDelete(id);
+}
