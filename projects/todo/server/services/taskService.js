@@ -20,6 +20,9 @@ export const updateTaskService = async (taskid, taskdata) => {
 
 export const deleteTaskService = async (taskid, userid) => {
     const task = await findById(taskid)
+    if (!task) {
+        throw new Error("Task Invalid")
+    }
 
     if(task.user.toString() != userid) {
         throw new Error("User Invalid")
