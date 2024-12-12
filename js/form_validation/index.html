@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="userForm">
+        <label for="firstname">First Name</label>
+        <input type="text" id="firstname" name="firstname">
+        
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="mail">
+        
+        <label>Options</label>
+        <input type="checkbox" id="option1" name="options" value="Option A"> Option 1<br>
+        <input type="checkbox" id="option2" name="options" value="Option B"> Option 2<br>
+        
+        <label>Gender</label>
+        <input type="radio" id="male" name="gender" value="Male"> Male<br>
+        <input type="radio" id="female" name="gender" value="Female"> Female<br>
+        
+        <label for="comment">Comment</label>
+        <textarea id="comment" name="comment"></textarea>
+        
+        <label for="dropdown">Select an option</label>
+        <select id="dropdown" name="dropdown">
+            <option value="">--Select--</option>
+            <option value="Option A">Bala</option>
+            <option value="Option B">Mala</option>
+            <option value="Option C">Sala</option>
+        </select>
+        
+        <button type="button" id="submitBtn">Submit</button>
+        <button type="button" id="cancelBtn">Cancel</button>
+    </form>
+    
+    <div id="tableContainer"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
