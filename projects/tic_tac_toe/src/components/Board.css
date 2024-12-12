@@ -1,0 +1,14 @@
+.boxbutton {
+    background-color: burlywood;
+    width: 80px;
+    height: 80px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    color: black;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(var(--column, 3), 1fr);
+    margin-top: 20px;
+}
