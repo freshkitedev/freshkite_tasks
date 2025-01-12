@@ -1,11 +1,13 @@
-import React from 'react'
 import { FaMoon, FaSun } from 'react-icons/fa'
 import { useAuth } from '../contexts/Authcontext'
 import { useTheme } from '../contexts/Themecontext';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const {user} = useAuth();
-    const {darkMode, toggleTheme} = useTheme();
+    const { user, logout } = useAuth();
+    const { darkMode, toggleTheme } = useTheme();
+    const navigate = useNavigate();
+
     return (
         <nav className='bg-blue-300 dark:bg-gray-800 shadow-md'>
             <div className="container mx-auto px-2 ">
@@ -18,18 +20,18 @@ const Navbar = () => {
                         </button>
                         {user ? (
                             <button className="px-3 py-2 text-md font-medium text-white
-                             bg-red-500 rounded-lg hover:bg-red-700">
+                             bg-red-500 rounded-lg hover:bg-red-700" onClick={() => logout()}>
                                 Logout
                             </button>
                         ) : (
                             <>
                                 <button className="px-3 py-2 text-md font-medium text-white
-                             bg-blue-500 rounded-lg hover:bg-blue-700">
-                                    Signup
+                             bg-blue-500 rounded-lg hover:bg-blue-700" onClick={() => navigate("/login")}>
+                                    Signin
                                 </button>
                                 <button className="px-3 py-2 text-md font-medium text-white
-                             bg-green-500 rounded-lg hover:bg-green-700">
-                                    Signin
+                             bg-green-500 rounded-lg hover:bg-green-700" onClick={() => navigate("/register")}>
+                                    Signup
                                 </button>
                             </>
                         )

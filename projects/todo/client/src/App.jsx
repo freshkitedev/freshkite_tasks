@@ -1,5 +1,4 @@
-import { BrowserRouter, Router } from 'react-router-dom'
-import './App.css'
+import { BrowserRouter } from 'react-router-dom'
 import Approutes from './routes/Approutes'
 import { AuthProvider } from './contexts/Authcontext'
 import { ThemeProvider } from './contexts/Themecontext'
