@@ -18,6 +18,7 @@ api.interceptors.request.use(
         return config;
     },
     (error) => {
+        toast.error(error);
         return Promise.reject(error);
     }
 );
@@ -25,14 +26,15 @@ api.interceptors.request.use(
 //Response interceptor
 api.interceptors.response.use(
     (res) => {
-        toast.success(res.data.msg);
+        //toast.success(res.data.msg);
         return res.data;
     },
     (err) => {
         const msg = err.response?.data?.error || "An error occured";
+        
         toast.error(msg);
         if(err.response?.status == 401) {
-            window.location.href = "/signin"
+            console.log("Error", msg);
         }
         return Promise.reject(msg);
     }

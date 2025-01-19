@@ -8,6 +8,6 @@ router.use(authenticate);
 router.post("/add", addTaskController);
 router.get("/get", getTaskController);
 router.put("/update/:id", updateTaskController);
-router.delete("/:id", deleteTaskController);
+router.delete("/delete/:id", deleteTaskController);
 
 export default router

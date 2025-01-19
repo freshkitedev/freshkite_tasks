@@ -9,10 +9,10 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     return (
-        <nav className='bg-blue-300 dark:bg-gray-800 shadow-md'>
+        <nav className='bg-blue-300 dark:bg-blue-600 shadow-md'>
             <div className="container mx-auto px-2 ">
                 <div className="flex justify-between items-center h-16">
-                    <h1 className="text-xl font-bold text-gray-800 dark:text-white">Todo App</h1>
+                    <div className="text-xl font-bold text-gray-800 cursor-pointer hover:text-gray-600 dark:text-white" onClick={() => navigate("/")}>Todo App</div>
                     <div className="flex items-center space-x-4">
                         <button onClick={toggleTheme} className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
                             {darkMode ? <FaSun className='text-yellow-400' /> :
