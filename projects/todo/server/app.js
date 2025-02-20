@@ -9,7 +9,7 @@ const app = exp()
 /* Middlewares */
 app.use(exp.json())
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow requests from this origin
+  origin: 'http://localhost:3000', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
 }))
@@ -35,9 +35,11 @@ app.use('/task', taskRouter)
 
 const connectToDb = async () => {
     try {
-        if (appConfig.db == "mongo") {
+        console.log("Connection to DB: ", appConfig.db);
+        /*if (appConfig.db == "mongo") {
             await connecToMongoDb();
-        }
+        } */
+        await connecToMongoDb();
     } catch(err) {
         console.log("Connection to DB failed", err);
     }

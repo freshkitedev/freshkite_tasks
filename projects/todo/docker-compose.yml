@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    image: freshkite/task_backend:v1
+    container_name: task_backend
+    restart: always
+    env_file:
+      - .env
+    networks:
+      - freshkite_network
+    ports:
+      - "5000:5000"
+
+  frontend:
+    image: freshkite/task_frontend:v1
+    container_name: task_frontend
+    restart: always
+    networks:
+      - freshkite_network
+    ports:
+      - "3000:80"
+
+networks:
+  freshkite_network:
+    driver: bridge
