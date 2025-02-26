@@ -1,8 +1,14 @@
 import axios from "axios"
 import { getStoredToken } from "../utils/storage"
 import toast from "react-hot-toast";
+//const API_URL = window.REACT_APP_API_URL || "http://localhost:5000";
+//const API_URL = "http://backend-service.default.svc.cluster.local:5000"
+//const API_URL = "http://ab1165ad61cec4a779f44d9e5926c690-1998865140.us-east-1.elb.amazonaws.com:5000"
+const API_URL = "http://localhost:5000";
+console.log("API URL:", API_URL);
+
 const api = axios.create({
-    baseURL:"http://localhost:5000",
+    baseURL: API_URL,
     headers:{
         'Content-Type': 'application/json'
     },
@@ -27,6 +33,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
     (res) => {
         //toast.success(res.data.msg);
+        console.log("API:", API_URL);
         return res.data;
     },
     (err) => {

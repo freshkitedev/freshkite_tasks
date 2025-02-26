@@ -5,7 +5,7 @@ COPY package*.json ./
 RUN npm install
 COPY ./ ./
 RUN npm run build && echo "Build succeeded!" || echo "Build failed!"
-RUN ls -la /app/dist
+
 
 # Stage 2: Serve with Nginx
 FROM nginx:alpine

@@ -5,14 +5,15 @@ import userRouter from "./routes/userRoutes.js"
 import taskRouter from "./routes/taskRoutes.js"
 import cors from "cors"
 
-const app = exp()
+const app = exp();
 /* Middlewares */
-app.use(exp.json())
-app.use(cors({
+app.use(exp.json());
+app.use(cors());
+/*app.use(cors({
   origin: 'http://localhost:3000', // Allow requests from this origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
-}))
+}))*/
 /* 
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || '').split(',');
 
