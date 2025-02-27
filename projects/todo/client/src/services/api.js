@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 //const API_URL = window.REACT_APP_API_URL || "http://localhost:5000";
 //const API_URL = "http://backend-service.default.svc.cluster.local:5000"
 //const API_URL = "http://ab1165ad61cec4a779f44d9e5926c690-1998865140.us-east-1.elb.amazonaws.com:5000"
-const API_URL = "http://localhost:5000";
+const API_URL = "http://todo.freshkite.com:5000";
 console.log("API URL:", API_URL);
 
 const api = axios.create({
