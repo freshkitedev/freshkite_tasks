@@ -72,6 +72,9 @@ module "eks" {
   # Attach Custom Security Group
   # cluster_security_group_id = aws_security_group.eks.id
 
+  cluster_endpoint_public_access  = true  # Enables public access
+  cluster_endpoint_private_access = true  # Keep private access enabled for security
+
   eks_managed_node_groups = {
     eks_nodes = {
       desired_capacity = var.node_desired_capacity
