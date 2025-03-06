@@ -1,1 +1,3 @@
-window.REACT_APP_API_URL = "http://backend-service:5000";
+window.env = {
+    REACT_APP_API_URL : "$REACT_APP_API_URL"
+};

@@ -11,5 +11,9 @@ RUN npm run build && echo "Build succeeded!" || echo "Build failed!"
 FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY ./public/env-config.js /usr/share/nginx/html/
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/entrypoint.sh", "nginx", "-g", "daemon off;"]
+#CMD ["nginx", "-g", "daemon off;"]
